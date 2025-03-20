@@ -60,6 +60,29 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
+
+        .btn {
+    background-color: #ff66c4; /* Color rosa fuerte */
+    color: white;
+    font-size: 1.5em; /* Tamaño del texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el emoji y el texto */
+    justify-content: center;
+}
+
+.btn span {
+    font-size: 1.5em; /* Aumenta el tamaño del emoji */
+}
+
+.btn:hover {
+    background-color: #e055b3; /* Color más oscuro al pasar el mouse */
+}
+
     </style>
 </head>
 <body>
@@ -80,7 +103,7 @@
     <div id="modal">
     <h2>¡GANASTE 🏆!</h2>
     <p>Hace click y develá el misterio.</p>
-    <button onclick="win()">🫵🏿</button>
+    <button onclick="win()" class="btn" >🫵🏿</button>
 </div>
 
     
