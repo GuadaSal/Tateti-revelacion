@@ -66,7 +66,7 @@
     <h1>¡Jugá al Tatetí 
         y 
         Descubre la Sorpresa!</h1>
-    <h1>🍼 vs 🐥 17</h1>
+    <h1>🍼 vs 🐥 19</h1>
     <div class="grid" id="board"></div>
 
     <!-- Modal de revelación 
@@ -83,7 +83,7 @@
     <button onclick="revealResult()">Descubrir</button>
 </div>
 
-    <h2 id="winner" class="hidden">¡Es un... <span id="reveal"></span>! 🎉</h2>
+    <h2 id="winner" class="hidden">¡Es un Varón 🐥! 🎉</h2>
 
     <script>
         const board = document.getElementById("board");
@@ -122,11 +122,11 @@
             currentPlayer = currentPlayer === "🍼" ? "🐥" : "🍼"; 
         }
 
-        function revealGender() {
-            revealText.textContent = currentPlayer === "🍼" ? "Niña 👧" : "Niño 👦";
-            winnerText.classList.remove("hidden");
-            revealModal.style.display = "none"; // Oculta el modal
-        }
+        //function revealGender() {
+            //revealText.textContent = currentPlayer === "🍼" ? "Niña 👧" : "Niño 👦";
+            //winnerText.classList.remove("hidden");
+            //revealModal.style.display = "none"; // Oculta el modal
+        //}
 
         function createBoard() {
             for (let i = 0; i < 9; i++) {
