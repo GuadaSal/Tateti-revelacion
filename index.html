@@ -19,7 +19,7 @@
         const board = document.getElementById("board");
         const winnerText = document.getElementById("winner");
         const revealText = document.getElementById("reveal");
-        let currentPlayer = "X";
+        let currentPlayer = "🍼";
         let boardState = ["", "", "", "", "", "", "", "", ""];
         
         function checkWinner() {
@@ -44,7 +44,7 @@
             boardState[index] = currentPlayer;
             document.getElementById("cell" + index).textContent = currentPlayer;
             if (checkWinner()) return;
-            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            currentPlayer = currentPlayer === "🍼" ? "🐥" : "🍼";
         }
         
         function createBoard() {
