@@ -42,6 +42,7 @@
 
         function handleClick(index) {
             if (boardState[index] || winnerText.classList.contains("hidden")) return;  // Corregí esta línea
+            console.log("Click " + index)
             boardState[index] = currentPlayer;
             document.getElementById("cell" + index).textContent = currentPlayer;
             if (checkWinner()) return;
