@@ -12,13 +12,23 @@
               margin: 0;             
              }
         .grid { display: grid; grid-template-columns: repeat(3, 100px); gap: 5px; justify-content: center; margin-top: 20px; }
-        .cell { width: 100px; height: 100px; font-size: 2em; text-align: center; vertical-align: middle; border: 2px solid black; cursor: pointer; }
+        .cell { 
+            width: 100px; 
+            height: 100px; 
+            font-size: 4em; 
+            text-align: center; 
+            vertical-align: middle; 
+            display: flex; 
+            align-items: center; /* Centra el contenido verticalmente */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            border: 2px solid black; 
+            cursor: pointer; }
         .hidden { display: none; font-size: 24px; margin-top: 20px; }
     </style>
 </head>
 <body>
     <h1>¡Juega al Tatetí y Descubre la Sorpresa!</h1>
-    <h1><p>🍼 y 🐥 9</p></h1>
+    <h1><p>🍼 y 🐥 10</p></h1>
     <div class="grid" id="board"></div>
     <h2 id="winner" class="hidden">¡Es un... <span id="reveal"></span>! 🎉</h2>
     <script>
