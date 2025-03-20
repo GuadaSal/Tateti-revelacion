@@ -83,6 +83,11 @@
 .btn:hover {
     background-color: #366154; /* Color más oscuro al pasar el mouse */
 }
+        .btn-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 20px; /* Espacio superior */
+}
 
     </style>
 </head>
@@ -104,7 +109,10 @@
     <div id="modal">
     <h2>¡GANASTE 🏆!</h2>
     <p>Hace click y develá el misterio.</p>
-    <button onclick="win()" class="btn" >🫵🏿</button>
+    <div class="btn-container">
+        <button onclick="win()" class="btn" >🫵🏿</button>
+    </div>
+        
 </div>
 
     
