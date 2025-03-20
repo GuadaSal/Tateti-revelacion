@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>¡Juega al Tatetí y Descubre la Sorpresa!</h1>
-    <p>🍼 y 🐥</p>
+    <p>🍼 y 🐥 1</p> 
     <div class="grid" id="board"></div>
     <h2 id="winner" class="hidden">¡Es un... <span id="reveal"></span>! 🎉</h2>
     <script>
@@ -41,7 +41,7 @@
         }
 
         function handleClick(index) {
-            if (boardState[index] || winnerText.classList.contains("hidden")) return;  // Corregí esta línea
+            //if (boardState[index] || winnerText.classList.contains("hidden")) return;  // Corregí esta línea
             console.log("Click " + index)
             boardState[index] = currentPlayer;
             document.getElementById("cell" + index).textContent = currentPlayer;
