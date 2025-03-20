@@ -49,8 +49,8 @@
     </style>
 </head>
 <body>
-    <h1>¡Juega al Tatetí y Descubre la Sorpresa!</h1>
-    <h1><p>🍼 y 🐥 12</p></h1>
+    <h1>¡Jugá al Tatetí y Descubre la Sorpresa!</h1>
+    <h1><p>🍼 y 🐥 13</p></h1>
     <div class="grid" id="board"></div>
         <!-- Modal de revelación -->
     <div id="revealModal" class="modal">
@@ -65,6 +65,8 @@
         const board = document.getElementById("board");
         const winnerText = document.getElementById("winner");
         const revealText = document.getElementById("reveal");
+        const revealModal = document.getElementById("revealModal");
+        revealModal.hide();
         let currentPlayer = "🍼";  // Mamadera
         let boardState = ["", "", "", "", "", "", "", "", ""];
 
@@ -77,8 +79,9 @@
             for (let pattern of winPatterns) {
                 let [a, b, c] = pattern;
                 if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
-                    revealText.textContent = "Varón"; // Aquí puedes cambiar a "Niña" si es necesario
-                    winnerText.classList.remove("hidden");
+                    //revealText.textContent = "Varón"; // Aquí puedes cambiar a "Niña" si es necesario
+                    //winnerText.classList.remove("hidden");
+                    revealModal.show();
                     return true;
                 }
             }
