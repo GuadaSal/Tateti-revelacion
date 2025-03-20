@@ -49,20 +49,37 @@
             margin-top: 10px;
             cursor: pointer;
         }
+        .modal {
+    display: none; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background: white; 
+    padding: 20px; 
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
     </style>
 </head>
 <body>
     <h1>¡Jugá al Tatetí y Descubre la Sorpresa!</h1>
-    <h1>"🍼" VS "🐥" 15</h1>
+    <h1>"🍼" VS "🐥" 16</h1>
     <div class="grid" id="board"></div>
 
-    <!-- Modal de revelación -->
+    <!-- Modal de revelación 
     <div id="revealModal" class="modal">
         <div class="modal-content">
             <h2>¡Tenemos un ganador!</h2>
             <button onclick="revealGender()">Descubrir el Sexo del Bebé</button>
         </div>
-    </div>
+    </div>-->
+
+    <div id="modal">
+    <h2>¡Felicidades!</h2>
+    <p>El resultado se revelará cuando hagas clic en el botón.</p>
+    <button onclick="revealResult()">Descubrir</button>
+</div>
 
     <h2 id="winner" class="hidden">¡Es un... <span id="reveal"></span>! 🎉</h2>
 
@@ -84,12 +101,16 @@
             for (let pattern of winPatterns) {
                 let [a, b, c] = pattern;
                 if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
-                    revealModal.style.display = "flex"; // Muestra el modal
+                    document.getElementById("modal").style.display = "block"; // Mostrar modal
                     return true;
                 }
             }
             return false;
         }
+        function revealResult() {
+    document.getElementById("modal").style.display = "none"; // Ocultar modal
+    winnerText.classList.remove("hidden"); // Mostrar el mensaje final
+}
 
         function handleClick(index) {
             if (boardState[index]) return;
