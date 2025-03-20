@@ -66,7 +66,7 @@
     <h1>¡Jugá al Tatetí 
         y 
         Descubre la Sorpresa!</h1>
-    <h1>🍼 vs 🐥 21</h1>
+    <h1>🍼 vs 🐥 22</h1>
 
     <h2 id="winner" class="hidden">¡Es un Varón 🐥! 🎉</h2>
 
@@ -122,6 +122,11 @@
             document.getElementById("cell" + index).textContent = currentPlayer;
             if (checkWinner()) return;
             currentPlayer = currentPlayer === "🍼" ? "🐥" : "🍼"; 
+        }
+
+        function win (){
+            hideModal();
+            winnerText.classList.remove("hidden"); // Mostrar el mensaje final
         }
 
         //function revealGender() {
