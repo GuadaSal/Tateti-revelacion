@@ -19,9 +19,9 @@
         const board = document.getElementById("board");
         const winnerText = document.getElementById("winner");
         const revealText = document.getElementById("reveal");
-        let currentPlayer = "🍼";
+        let currentPlayer = "🍼";  // Mamadera
         let boardState = ["", "", "", "", "", "", "", "", ""];
-        
+
         function checkWinner() {
             const winPatterns = [
                 [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -31,22 +31,22 @@
             for (let pattern of winPatterns) {
                 let [a, b, c] = pattern;
                 if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
-                    revealText.textContent = "Varón"; // Cambiar a "Niño" si corresponde
+                    revealText.textContent = "Varón"; // Aquí puedes cambiar a "Niña" si es necesario
                     winnerText.classList.remove("hidden");
                     return true;
                 }
             }
             return false;
         }
-        
+
         function handleClick(index) {
-            if (!boardState[index] && !winnerText.classList.contains("hidden")) return;
+            if (boardState[index] || winnerText.classList.contains("hidden")) return;  // Corregí esta línea
             boardState[index] = currentPlayer;
             document.getElementById("cell" + index).textContent = currentPlayer;
             if (checkWinner()) return;
-            currentPlayer = currentPlayer === "🍼" ? "🐥" : "🍼";
+            currentPlayer = currentPlayer === "🍼" ? "🐥" : "🍼";  // Cambio entre mamadera y chutepe
         }
-        
+
         function createBoard() {
             for (let i = 0; i < 9; i++) {
                 let cell = document.createElement("div");
@@ -60,4 +60,3 @@
     </script>
 </body>
 </html>
-
