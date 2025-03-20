@@ -24,49 +24,17 @@
             border: 2px solid black; 
             cursor: pointer; }
         .hidden { display: none; font-size: 24px; margin-top: 20px; }
-                /* Estilo del modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .modal button {
-            font-size: 18px;
-            padding: 10px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
-    <h1>¡Jugá al Tatetí y Descubre la Sorpresa!</h1>
-    <h1><p>🍼 y 🐥 13</p></h1>
+    <h1>¡Juega al Tatetí y Descubre la Sorpresa!</h1>
+    <h1><p>🍼 y 🐥 14</p></h1>
     <div class="grid" id="board"></div>
-        <!-- Modal de revelación -->
-    <div id="revealModal" class="modal">
-        <div class="modal-content">
-            <h2>¡Tenemos un ganador!</h2>
-            <button onclick="revealGender()">Descubrir el Sexo del Bebé</button>
-        </div>
-    </div>
-
     <h2 id="winner" class="hidden">¡Es un... <span id="reveal"></span>! 🎉</h2>
     <script>
         const board = document.getElementById("board");
         const winnerText = document.getElementById("winner");
         const revealText = document.getElementById("reveal");
-        const revealModal = document.getElementById("revealModal");
-        revealModal.hide();
         let currentPlayer = "🍼";  // Mamadera
         let boardState = ["", "", "", "", "", "", "", "", ""];
 
@@ -79,9 +47,8 @@
             for (let pattern of winPatterns) {
                 let [a, b, c] = pattern;
                 if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
-                    //revealText.textContent = "Varón"; // Aquí puedes cambiar a "Niña" si es necesario
-                    //winnerText.classList.remove("hidden");
-                    revealModal.show();
+                    revealText.textContent = "Varón"; // Aquí puedes cambiar a "Niña" si es necesario
+                    winnerText.classList.remove("hidden");
                     return true;
                 }
             }
@@ -96,11 +63,7 @@
             if (checkWinner()) return;
             currentPlayer = currentPlayer === "🍼" ? "🐥" : "🍼";  // Cambio entre mamadera y chutepe
         }
-        function revealGender() {
-            revealText.textContent = currentPlayer === "🍼" ? "Niña 👧" : "Niño 👦";
-            winnerText.classList.remove("hidden");
-            revealModal.style.display = "none"; // Oculta el modal
-        }
+
         function createBoard() {
             for (let i = 0; i < 9; i++) {
                 let cell = document.createElement("div");
