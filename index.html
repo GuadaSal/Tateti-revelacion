@@ -66,9 +66,12 @@
     <h1>¡Jugá al Tatetí 
         y 
         Descubre la Sorpresa!</h1>
-    <h1>🍼 vs 🐥 20</h1>
-    <div class="grid" id="board"></div>
+    <h1>🍼 vs 🐥 21</h1>
 
+    <h2 id="winner" class="hidden">¡Es un Varón 🐥! 🎉</h2>
+
+    <div class="grid" id="board"></div>
+    
     <!-- Modal de revelación--> 
     <div id="revealModal" class="modal">
         <div class="modal-content">
@@ -80,11 +83,10 @@
     <div id="modal">
     <h2>¡Felicidades!</h2>
     <p>El resultado se revelará cuando hagas clic en el botón.</p>
-    <button onclick="revealResult()">Descubrir</button>
+    <button onclick="hideModal()">Descubrir</button>
 </div>
 
-    <h2 id="winner" class="hidden">¡Es un Varón 🐥! 🎉</h2>
-
+    
     <script>
         const board = document.getElementById("board");
         const winnerText = document.getElementById("winner");
@@ -109,10 +111,10 @@
             }
             return false;
         }
-        function revealResult() {
-    document.getElementById("modal").style.display = "none"; // Ocultar modal
-    winnerText.classList.remove("hidden"); // Mostrar el mensaje final
-}
+        function hideModal() {
+            document.getElementById("modal").style.display = "none"; // Ocultar modal
+            //winnerText.classList.remove("hidden"); // Mostrar el mensaje final
+        }
 
         function handleClick(index) {
             if (boardState[index]) return;
@@ -129,7 +131,7 @@
         //}
 
         function createBoard() {
-            revealResult();
+            hideModal();
             for (let i = 0; i < 9; i++) {
                 let cell = document.createElement("div");
                 cell.classList.add("cell");
