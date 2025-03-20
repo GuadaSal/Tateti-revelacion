@@ -66,16 +66,16 @@
     <h1>¡Jugá al Tatetí 
         y 
         Descubre la Sorpresa!</h1>
-    <h1>🍼 vs 🐥 19</h1>
+    <h1>🍼 vs 🐥 20</h1>
     <div class="grid" id="board"></div>
 
-    <!-- Modal de revelación 
+    <!-- Modal de revelación--> 
     <div id="revealModal" class="modal">
         <div class="modal-content">
             <h2>¡Tenemos un ganador!</h2>
             <button onclick="revealGender()">Descubrir el Sexo del Bebé</button>
         </div>
-    </div>-->
+    </div>
 
     <div id="modal">
     <h2>¡Felicidades!</h2>
@@ -129,6 +129,7 @@
         //}
 
         function createBoard() {
+            revealResult();
             for (let i = 0; i < 9; i++) {
                 let cell = document.createElement("div");
                 cell.classList.add("cell");
